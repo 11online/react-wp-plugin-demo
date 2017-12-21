@@ -1,0 +1,21 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/wp-plugin/node_modules
+
+# testing
+/wp-plugin/coverage
+
+# production
+/wp-plugin/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+/wp-plugin/npm-debug.log*
+/wp-plugin/yarn-debug.log*
+/wp-plugin/yarn-error.log*
