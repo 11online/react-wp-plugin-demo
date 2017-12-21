@@ -25,7 +25,7 @@ function add_react_reviews_to_posts($content) {
 		$content .= "<div id='root'></div><script>var post_id = $post_id; var user_id = $user_id;</script>";
 
 		// enqueue our build script with the wp-api dependency
-		wp_enqueue_script( 'react_script', plugin_dir_url( __FILE__ ) . 'wp-plugin/build/static/js/main.e1bef0f9.js' );
+		wp_enqueue_script( 'react_script', plugin_dir_url( __FILE__ ) . 'wp-plugin/build/static/js/main.9ac7c01f.js' );
 
 	}
 
