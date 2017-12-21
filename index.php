@@ -18,13 +18,14 @@ function add_react_reviews_to_posts($content) {
 	// if this is a post, but not the blog page
 	if(is_single() && !is_home()) {
 		// get our post id for the api
-		$id = get_the_ID();
+		$post_id = get_the_ID();
+		$user_id = get_current_user_id();
 
 		// add our content, a div with id of root for our react script
-		$content .= "<div id='root'></div><script>var postId = $id;</script>";
+		$content .= "<div id='root'></div><script>var post_id = $post_id; var user_id = $user_id;</script>";
 
 		// enqueue our build script with the wp-api dependency
-		wp_enqueue_script( 'react_script', plugin_dir_url( __FILE__ ) . 'wp-plugin/build/static/js/main.fc69b3e1.js' );
+		wp_enqueue_script( 'react_script', plugin_dir_url( __FILE__ ) . 'wp-plugin/build/static/js/main.e1bef0f9.js' );
 
 	}
 
@@ -80,7 +81,7 @@ function get_reviews_by_post($post_id) {
 	foreach($users as $user) {
 		$user_meta = get_user_meta ( $user->ID, $meta_key, true);
 		$image = get_avatar_url($user->ID, ['size' => 36]);
-		$userArray[$user->user_nicename] = ['review' => $user_meta, 'image' => $image];
+		$userArray[$user->ID] = ['review' => $user_meta, 'image' => $image, 'name' => $user->user_nicename];
 	}
 
 	return $userArray;
