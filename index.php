@@ -21,7 +21,7 @@ function add_react_reviews_to_posts($content) {
 		$content .= "<div id='root'></div>";
 
 		// enqueue our build script
-		wp_enqueue_script( 'react_script', plugin_dir_url( __FILE__ ) . 'wp-plugin/build/static/js/main.313d7fd1.js' );
+		wp_enqueue_script( 'react_script', plugin_dir_url( __FILE__ ) . 'wp-plugin/build/static/js/main.e6280f46.js' );
 	}
 
 	return $content;
