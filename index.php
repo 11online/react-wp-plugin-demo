@@ -24,7 +24,7 @@ function add_react_reviews_to_posts($content) {
 		$content .= "<div id='root'></div><script>var postId = $id;</script>";
 
 		// enqueue our build script with the wp-api dependency
-		wp_enqueue_script( 'react_script', plugin_dir_url( __FILE__ ) . 'wp-plugin/build/static/js/main.da3b2283.js' );
+		wp_enqueue_script( 'react_script', plugin_dir_url( __FILE__ ) . 'wp-plugin/build/static/js/main.fc69b3e1.js' );
 
 	}
 
@@ -79,7 +79,7 @@ function get_reviews_by_post($post_id) {
 	// I know this isn't efficient, but for our demo it will suffice. In production, you'd want to write a join to get all the data at once.
 	foreach($users as $user) {
 		$user_meta = get_user_meta ( $user->ID, $meta_key, true);
-		$image = get_avatar($user->ID);
+		$image = get_avatar_url($user->ID, ['size' => 36]);
 		$userArray[$user->user_nicename] = ['review' => $user_meta, 'image' => $image];
 	}
 
